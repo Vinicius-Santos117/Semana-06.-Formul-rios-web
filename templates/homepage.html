@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block navbar %}
+    {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+    <h1>Olá, {{ user_data.first_name|default('') }} {{ user_data.last_name|default('') }}!</h1>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="container">
+        
+        
+        <h1>Instituição de Ensino: {{ user_data.institution|default('') }}</h1>
+        <h1>Disciplina: {{ user_data.discipline|default('') }}</h1>
+        <h1>IP do Computador Remoto: {{ user_data.addr_client|default('') }}</h1>
+        <h1>Host da Aplicação: {{ user_data.host|default('') }}</h1>
+        
+       
+        <hr>
+
+        {{ wtf.quick_form(form) }}
+        
+         <h3>The local date and time is {{ local_time }}.</h3>
+         
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

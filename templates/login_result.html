@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Acesso{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="container">
+        <div class="page-header">
+            <h1>Dados de acesso</h1>
+        </div>
+        <p>Você está acessando o sistema por meio do usuário: {{ username }}</p>
+    </div>
+{% endblock %}
