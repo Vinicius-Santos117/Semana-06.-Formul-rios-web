@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block page_content %}
-    <h1>Olá, {{ user_data.first_name|default('') }} {{ user_data.last_name|default('') }}!</h1>
+    <h1>Olá Usuário, {{ user_data.first_name|default('') }} {{ user_data.last_name|default('') }}!</h1>
 {% endblock %}
 
 {% block content %}
@@ -36,4 +36,5 @@
 
 {% block scripts %}
     {{ super() }}
+
 {% endblock %}
